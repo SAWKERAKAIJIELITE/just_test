@@ -8,6 +8,8 @@ use App\Http\Controllers\FollowPageController;
 use App\Http\Controllers\InviteController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\ReactionsController;
+use App\Http\Controllers\ReportsController;
 use App\Http\Controllers\RequestMediaController;
 use App\Http\Controllers\SpecialityController;
 use App\Http\Controllers\UserController;
@@ -82,3 +84,12 @@ Route::middleware('auth:sanctum')->get('removepostfromsaves{id}',[FavoritePostsC
 Route::middleware('auth:sanctum')->get('showpostfromsaves',[FavoritePostsController::class,'showpostfromsaves']);
 Route::middleware('auth:sanctum')->post('create_commente_on_post{id}',[CommentsController::class,'create_commente_on_post']);
 Route::middleware('auth:sanctum')->get('delete_commente_on_post/{post_id}/{comment_id}',[CommentsController::class,'delete_commente_on_post']);
+Route::middleware('auth:sanctum')->post('report_on_post{id}',[ReportsController::class,'report_on_post']);
+Route::middleware('auth:sanctum')->post('report_on_comment{id}',[ReportsController::class,'report_on_comment']);
+Route::middleware('auth:sanctum')->get('delete_report_on_post{id}',[ReportsController::class,'delete_report_on_post']);
+Route::middleware('auth:sanctum')->get('delete_report_on_comment{id}',[ReportsController::class,'delete_report_on_comment']);
+
+Route::middleware('auth:sanctum')->get('reaction_on_post/{post_id}/{likeordi}',[ReactionsController::class,'reaction_on_post']);
+Route::middleware('auth:sanctum')->get('reaction_on_comment/{post_id}/{likeordi}',[ReactionsController::class,'reaction_on_comment']);
+Route::middleware('auth:sanctum')->get('delete_reaction_on_post/{post_id}/{likeordi}',[ReactionsController::class,'delete_reaction_on_post']);
+Route::middleware('auth:sanctum')->get('delete_reaction_on_comment/{post_id}/{likeordi}',[ReactionsController::class,'delete_reaction_on_comment']);

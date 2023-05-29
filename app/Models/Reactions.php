@@ -12,8 +12,8 @@ class Reactions extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'type',
-        'user_id','location'
+        'type','location_type','location_id',
+        'user_id','location',
 
     ];
     public function User():BelongsTo

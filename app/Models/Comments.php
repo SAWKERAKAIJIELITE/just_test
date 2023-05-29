@@ -11,7 +11,7 @@ class Comments extends Model
 {
     use HasFactory;
     protected $fillable=[
-        'likes_counts', 'dislikes_counts','commenter_id','post_id','content' ];
+        'likes_counts', 'dislikes_counts','commenter_id','post_id','content','reports_number' ];
 
         public function User(): BelongsTo
         {
@@ -29,5 +29,5 @@ class Comments extends Model
         {
             return $this->morphMany(Reactions::class, 'location');
         }
-      
+
 }

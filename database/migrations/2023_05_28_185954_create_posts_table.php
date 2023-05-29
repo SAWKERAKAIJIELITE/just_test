@@ -19,6 +19,7 @@ return new class extends Migration
             $table->morphs('location');
             $table->bigInteger('likes_counts')->nullable();
             $table->bigInteger('dislikes_counts')->nullable();
+            $table->bigInteger('reports_number')->nullable()->default(0);
 
             $table->foreignId('user_id') // مشان نعرف مين نشر
             ->constrained('users')

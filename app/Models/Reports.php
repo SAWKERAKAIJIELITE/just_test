@@ -13,13 +13,13 @@ class Reports extends Model
     use HasFactory;
     protected $fillable = [
         'reports_number',
-        'type',
+        'type','why','type_type','type_id'
 
     ];
     public function type()
     {
         return $this->morphTo();
     }
-    
+
 
 }

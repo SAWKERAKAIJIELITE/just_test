@@ -14,7 +14,6 @@ return new class extends Migration
         Schema::create('reports', function (Blueprint $table) {
             $table->id();
 $table->morphs('type');
-$table->bigInteger('reports_number');
 
             $table->timestamps();
         });

@@ -17,7 +17,7 @@ class Post extends Model
         'likes_counts',
         'location',
         'type',
-'Content','title',
+'Content','title','reports_number'
     ];
     public function User():BelongsTo
     {
