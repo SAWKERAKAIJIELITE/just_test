@@ -12,7 +12,7 @@ class ReportsController extends Controller
      */
     public function report_on_post()
     {
-        
+        return 'hi';
     }
 
     /**
