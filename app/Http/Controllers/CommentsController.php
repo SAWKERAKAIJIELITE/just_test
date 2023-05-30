@@ -23,7 +23,9 @@ class CommentsController extends Controller
         ]);
     }
     public function test($post_id, $comment_id)
-    {}
+    {
+        /////////
+    }
     /**
      * Show the form for creating a new resource.
      */
